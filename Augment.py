@@ -176,9 +176,9 @@ def doElastic(
 	# image = np.transpose(image, (1, 2, 0))
 	# label = np.transpose(label, (1, 2, 0))
 	if Verbose:
-		print "Perform  transformation using elastic deformation"
-		print "Shape of image: ", image.shape
-		print "Shape of label: ", label.shape
+		print("Perform  transformation using elastic deformation")
+		print("Shape of image: ", image.shape)
+		print("Shape of label: ", label.shape)
 		pass
 
 	# Retrieve image shape
@@ -269,9 +269,9 @@ def addNoise(
 	dimx, dimy = shape
 	
 	if Verbose:
-		print "Perform random noise"
-		print "Shape of image: ", image.shape
-		print "Shape of label: ", label.shape
+		print("Perform random noise")
+		print("Shape of image: ", image.shape)
+		print("Shape of label: ", label.shape)
 		pass
 	if noise_type == "gauss":
 		mean = 0 # 0 0.5
@@ -316,4 +316,4 @@ if __name__ == '__main__':
 	# image, label = addNoise(image, label, Verbose=True)
 	
 	# Test adapthist
-	image, label = doAdapHist(image, label, Verbose=True)
+	# image, label = doAdapHist(image, label, Verbose=True)

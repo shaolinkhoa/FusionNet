@@ -11,7 +11,10 @@ from Model 		import *
 from Augment  	import *
 from keras.callbacks import TensorBoard
 from keras.callbacks import ModelCheckpoint
-from keras.utils.visualize_util import plot
+
+# from keras.utils.visualize_util import plot
+from keras.utils import plot_model
+
 ######################################################################################
 def augment_data(X, y):
 	progbar = Progbar(X.shape[0])
@@ -89,11 +92,11 @@ def train():
 	X = np.concatenate((X0, X1, X2, X3, X4, X5, X6), axis=0);	
 	y = np.concatenate((y0, y1, y2, y3, y4, y5, y6), axis=0);	
 	##########
-	print "Y median", np.median(y)
-	print "X shape", X.shape
-	print "X dtype", X.dtype
-	print "Y shape", y.shape
-	print "Y dtype", y.dtype
+	print("Y median", np.median(y))
+	print("X shape", X.shape)
+	print("X dtype", X.dtype)
+	print("Y shape", y.shape)
+	print("Y dtype", y.dtype)
 	
 	
 	nb_iter 		= 1001
@@ -110,7 +113,7 @@ def train():
 	# model.load_weights("model_300.hdf5")
 	# graph = to_graph(model, show_shape=True)
 	# graph.write_png("model.png")
-	plot(model, to_file='model.png', show_shapes=True)
+	plot_model(model, to_file='model.png', show_shapes=True)
 
 	nb_folds 	= 3
 	kfolds 		= KFold(len(y), nb_folds)
@@ -146,8 +149,8 @@ def train():
 			X_valid, y_valid = augment_data(X_valid, y_valid) # Data augmentation for training 
 			
 			
-			print "X_train", X_train.shape
-			print "y_train", y_train.shape
+			print("X_train", X_train.shape)
+			print("y_train", y_train.shape)
 			
 			# Normalize
 			# X_train = X_train/255.0

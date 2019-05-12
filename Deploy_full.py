@@ -4,8 +4,8 @@ from Model import *
 def deploy():
 	X = np.load('X_train.npy')
 	y = np.load('y_train.npy')
-	print "X.shape", X.shape
-	print "y.shape", y.shape
+	print("X.shape", X.shape)
+	print("y.shape", y.shape)
 	
 	X = np.expand_dims(X, axis=1)
 	y = np.expand_dims(y, axis=1)
@@ -18,12 +18,12 @@ def deploy():
 	y = np.transpose(y, (0, 2, 3, 1))
 	
 	
-	print "X.shape", X.shape
-	print "y.shape", y.shape
+	print("X.shape", X.shape)
+	print("y.shape", y.shape)
 	
 	X_deploy = X
 	
-	print "X_deploy.shape", X_deploy.shape
+	print("X_deploy.shape", X_deploy.shape)
 	
 	
 	# Load model
@@ -39,7 +39,7 @@ def deploy():
     
 	#print pred_recon
 	#print X_deploy
-	print "pred_recon.shape", pred_recon.shape
+	print("pred_recon.shape", pred_recon.shape)
 	# pred_recon  = np.reshape(pred_recon, (30,1,640, 640))
 	pred_recon  = np.array(pred_recon[:,:,:,0])
 	pred_recon = pred_recon[...,radius:-radius, radius:-radius]

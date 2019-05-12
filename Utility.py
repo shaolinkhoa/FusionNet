@@ -23,7 +23,7 @@ import random
 import subprocess
 from matplotlib.pyplot 				import ion
 from matplotlib.pyplot 				import cm
-from sklearn.cross_validation 		import KFold # For cross_validation
+from sklearn.model_selection 		import KFold # For cross_validation
 from sklearn.metrics 				import mean_squared_error
 from skimage.restoration 			import denoise_tv_chambolle
 from skimage 						import exposure
@@ -37,4 +37,4 @@ from keras.utils.generic_utils 		import Progbar
 from multiprocessing 				import Process
 from joblib 						import Parallel, delayed
 from random 						import randint
-from graphviz 						import Digraph 
+from graphviz 						import Digraph

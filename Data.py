@@ -10,8 +10,8 @@ def img2arr(imageFile):
 	Read images tif files and store as np array
 	"""
 	img = skimage.io.imread(imageFile)
-	print "File name: ", imageFile
-	print "Shape    : ", img.shape
+	print("File name: ", imageFile)
+	print("Shape    : ", img.shape)
 	return img
 
 def data():
