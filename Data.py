@@ -1,9 +1,9 @@
 from Utility import *
 from Augment import *
 
-train_volume_file = "data/train-inputs.tif"
-train_labels_file = "data/train-labels.tif"
-test_volume_file  = "data/test-inputs.tif"
+train_volume_file = "data_ISBI_2012/train-inputs.tif"
+train_labels_file = "data_ISBI_2012/train-labels.tif"
+test_volume_file  = "data_ISBI_2012/test-inputs.tif"
 
 def img2arr(imageFile):
 	"""
@@ -19,15 +19,15 @@ def data():
 	# train_image = img2arr(train_volume_file)
 	# train_label = img2arr(train_labels_file)
 	# test_image  = img2arr(test_volume_file)
-	
+
 	# np.save("X_train.npy", train_image)
 	# np.save("y_train.npy", train_label)
 	# np.save("X_test.npy",  test_image)
-	
-	# train_volume_file = "data/train_256x256x128.tif"
-	# train_labels_file = "data/segm_256x256x128.tif"	
-	# train_volume_file = "data/train_512x512x128.tif"
-	# train_labels_file = "data/segm_512x512x128.tif"
+
+	# train_volume_file = "data_ISBI_2012/train_256x256x128.tif"
+	# train_labels_file = "data_ISBI_2012/segm_256x256x128.tif"
+	# train_volume_file = "data_ISBI_2012/train_512x512x128.tif"
+	# train_labels_file = "data_ISBI_2012/segm_512x512x128.tif"
 	
 	train_image = img2arr(train_volume_file)
 	train_label = img2arr(train_labels_file)

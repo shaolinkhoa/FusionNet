@@ -12,8 +12,8 @@ from Augment  	import *
 from keras.callbacks import TensorBoard
 from keras.callbacks import ModelCheckpoint
 
-# from keras.utils.visualize_util import plot
-from keras.utils import plot_model
+from keras.utils.visualize_util import plot
+#from keras.utils import plot_model
 
 ######################################################################################
 def augment_data(X, y):
@@ -113,10 +113,11 @@ def train():
 	# model.load_weights("model_300.hdf5")
 	# graph = to_graph(model, show_shape=True)
 	# graph.write_png("model.png")
-	plot_model(model, to_file='model.png', show_shapes=True)
+	plot(model, to_file='model.png', show_shapes=True)
 
 	nb_folds 	= 3
-	kfolds 		= KFold(len(y), nb_folds)
+	# kfolds 		= KFold(len(y), nb_folds)
+	kfolds = KFold(nb_folds)
 
 	# Perform cross validation on the data
 	for iter in range(nb_iter):
@@ -133,7 +134,8 @@ def train():
 		np.random.shuffle(y)
 		
 		f = 0
-		for train, valid in kfolds:
+		for train, valid in kfolds.split(X):
+		# for train, valid in kfolds:
 			print('='*50)
 			print('Fold', f+1)
 			f += 1

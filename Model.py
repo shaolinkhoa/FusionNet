@@ -18,13 +18,15 @@ from keras import backend as K
 from keras import regularizers
 
 def conv_block(feat_maps_out, prev):
-    prev = BatchNormalization(axis=1, mode=2)(prev) # Specifying the axis and mode allows for later merging
+	prev = BatchNormalization(axis=1, mode=2)(prev) # Specifying the axis and mode allows for later merging
+	# prev = BatchNormalization(axis=1)(prev)# Specifying the axis and mode allows for later merging
     # prev = Activation('relu')(prev)
-    prev = Convolution2D(feat_maps_out, 3, 3, activation='relu', border_mode='same')(prev) 
-    prev = BatchNormalization(axis=1, mode=2)(prev) # Specifying the axis and mode allows for later merging
+	prev = Convolution2D(feat_maps_out, 3, 3, activation='relu', border_mode='same')(prev)
+	prev = BatchNormalization(axis=1, mode=2)(prev) # Specifying the axis and mode allows for later merging
+	# prev = BatchNormalization(axis=1)(prev) # Specifying the axis and mode allows for later merging
     # prev = Activation('relu')(prev)
-    prev = Convolution2D(feat_maps_out, 3, 3, activation='relu', border_mode='same')(prev) 
-    return prev
+	prev = Convolution2D(feat_maps_out, 3, 3, activation='relu', border_mode='same')(prev)
+	return prev
 
 
 def skip_block(feat_maps_in, feat_maps_out, prev):

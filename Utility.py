@@ -24,6 +24,7 @@ import subprocess
 from matplotlib.pyplot 				import ion
 from matplotlib.pyplot 				import cm
 from sklearn.model_selection 		import KFold # For cross_validation
+# from sklearn.cross_validation 		import KFold # For cross_validation
 from sklearn.metrics 				import mean_squared_error
 from skimage.restoration 			import denoise_tv_chambolle
 from skimage 						import exposure
